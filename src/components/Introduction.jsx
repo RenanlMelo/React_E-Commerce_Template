@@ -17,7 +17,7 @@ export const Introduction = () => {
                         initial={{ x: 50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -50, opacity: 0 }}
-                        transition={{ duration: .5, delay: .5 }} className='max-w-2xl text-left'>
+                        transition={{ duration: .5, delay: .25 }} className='max-w-2xl text-left'>
                         Feel free to take a look and give your business a <strong>fresh</strong>, new face.
                     </motion.h1>
                 </AnimatePresence>
