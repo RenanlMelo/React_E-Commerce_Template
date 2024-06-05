@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 export const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: true, // Dispara a animação apenas uma vez
-    threshold: 0.5, // Percentual do elemento visível para disparar a animação
+    threshold: 1, // Percentual do elemento visível para disparar a animação
   });
 
   const variants = {
@@ -22,13 +22,18 @@ export const About = () => {
           animate={inView ? 'visible' : 'hidden'}
           variants={variants}
           transition={{ duration: 0.5 }}
-          className="px-12 font-bold text-3xl"
+          className="font-bold text-3xl"
         >
           About Your Business
         </motion.h1>
-        <div className="w-full flex ">
-            
-        </div>
+        <motion.div className="w-full flex"
+          ref={ref}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={variants}
+          transition={{ duration: 0.5 }}>
+          This is just an example of what your business could look like
+        </motion.div>
       </div>
     </>
   );
